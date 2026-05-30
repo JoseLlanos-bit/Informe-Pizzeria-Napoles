@@ -204,7 +204,6 @@ function updateKPI() {
     var label = tn ? tn : (mes ? 'Mes '+mes : 'Todos');
     var mesLabel = mes ? mes : 'Mayo';
     var turnoObj = tn ? TURNOS.find(function(o){return o.tn===tn}) : null;
-    var propinaVal = turnoObj ? turnoObj.p : dp;
     var dp = 0;
     SORTED_TURNOS.forEach(function(t){
         if ((!mes || t.slice(-2)===mes) && (!tn || cmpTurnos(t, tn) <= 0)) {
@@ -212,6 +211,7 @@ function updateKPI() {
             if (o) dp += o.p;
         }
     });
+    var propinaVal = turnoObj ? turnoObj.p : dp;
     var promP = dp/dCnt;
     var fp = promP * TOTAL_DIAS_MES;
     var descVal = turnoObj ? turnoObj.d : ds.reduce(function(s,r){return s+r.d},0);
