@@ -1,0 +1,18 @@
+# Auto detect text files and normalize to LF in repo, CRLF on checkout (Windows)
+* text=auto
+
+# PowerShell scripts: keep CRLF on Windows
+*.ps1 text eol=crlf
+
+# HTML/JS/CSS: keep CRLF on Windows
+*.html text eol=crlf
+*.js text eol=crlf
+*.css text eol=crlf
+
+# JSON files
+*.json text eol=crlf
+
+# Binary files - don't touch
+*.png binary
+*.jpg binary
+*.ico binary
