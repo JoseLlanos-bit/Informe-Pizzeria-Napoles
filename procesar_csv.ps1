@@ -58,7 +58,7 @@ foreach ($r in $rows) {
     # Category lookup
     $cat = "Otros"; $subcat = "Otros"
     $match = $map.$nom
-    if ($match) { $cat = $match.categoria; $subcat = $match.subcategoria }
+    if ($match) { $cat = $match.cat; $subcat = $match.subcat }
     
     $u = $pr - $co
     if ($pr -gt 0) { $m = ([Math]::Round($u / $pr * 100, 1)).ToString([System.Globalization.CultureInfo]::InvariantCulture) } else { $m = "0" }
